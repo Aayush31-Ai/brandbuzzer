@@ -226,7 +226,7 @@ export default function BuzzerEquation({
   return (
     <section
       id="equation"
-      className={`relative w-full py-16 sm:py-24 md:py-28 px-6 sm:px-10 lg:px-14 xl:px-20 max-w-7xl mx-auto overflow-hidden ${className}`.trim()}
+      className={`relative w-full py-8 sm:py-12 md:py-16 px-4 sm:px-10 lg:px-14 xl:px-20 max-w-7xl mx-auto overflow-hidden ${className}`.trim()}
     >
       {/* Noise Texture (Dots Grid) Background with Ultra-Smooth Radial Feathering */}
       <div
@@ -268,7 +268,7 @@ export default function BuzzerEquation({
 
       {/* Decorative Giant Background Outlined Watermark */}
       <div
-        className="absolute top-10 right-6 sm:right-16 md:right-24 text-[160px] sm:text-[240px] md:text-[300px] font-black italic select-none pointer-events-none leading-none z-0"
+        className="absolute top-6 right-4 sm:right-16 md:right-24 text-[90px] sm:text-[180px] md:text-[260px] font-black italic select-none pointer-events-none leading-none z-0 opacity-80"
         style={{
           WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.03)',
           color: 'transparent',
@@ -282,17 +282,17 @@ export default function BuzzerEquation({
       {/* ======================================================== */}
       {/* SECTION HEADER                                           */}
       {/* ======================================================== */}
-      <div className="relative z-10 max-w-5xl mx-auto flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 sm:mb-16">
+      <div className="relative z-10 max-w-5xl mx-auto flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 mb-10 sm:mb-16">
         {/* Left: Badge + Heading */}
         <div>
           {/* Dash & Category Tag */}
-          <div className="flex items-center gap-3 text-xs tracking-[0.25em] text-neutral-400 uppercase font-semibold mb-3.5">
+          <div className="flex items-center gap-3 text-xs tracking-[0.25em] text-neutral-400 uppercase font-semibold mb-3">
             <span className="w-6 sm:w-7 h-[2px] bg-[#CCFF00] inline-block" />
             <span>{badge}</span>
           </div>
 
           {/* Main Title */}
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase leading-[0.98]">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white uppercase leading-[1.02]">
             {titleLine1} <br />
             <span>{titleLine2}</span>
           </h2>

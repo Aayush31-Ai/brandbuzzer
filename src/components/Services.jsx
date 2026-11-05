@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import OrbitImages from './OrbitImages';
+import MobileServicesScroller from './MobileServicesScroller';
 import { ShaderBackground } from '@/components/ui/kk';
 import { ArrowUpRight, X, ChevronLeft, ChevronRight, CheckCircle2, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -101,6 +102,25 @@ export const SERVICES_DATA = [
     ],
     metric: 'Sub-Second Speeds & 44%+ Increase in Inbound Inquiries',
   },
+  {
+    id: 'video-production-editing',
+    index: '06',
+    title: 'Video Production & Editing',
+    tagline: 'Cinema-Grade Direction. High-Retention Viral Pacing.',
+    description:
+      'Cinema camera direction, dynamic sound design, visual effects, and high-velocity post-production that transform brand stories into cultural movements.',
+    longDescription:
+      'We bring studio-grade production value to brand storytelling. From storyboard concepting and on-set camera direction to intricate VFX, sound design, color grading, and viral retention pacing, we craft visual masterpieces that capture and hold attention.',
+    image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=900&q=80&auto=format&fit=crop',
+    tags: ['Cinema Production', 'VFX & Motion', 'High-Retention Editing'],
+    deliverables: [
+      { title: 'Cinema Direction', desc: 'On-set cinematography, lighting design, and creative directing.' },
+      { title: 'Kinetic VFX & Motion', desc: 'Custom 2D/3D motion graphics, 3D text tracking, and visual polish.' },
+      { title: 'Bespoke Sound Design', desc: 'Spatial audio scoring, Foley effects, and broadcast mixing.' },
+      { title: 'Platform Pacing', desc: 'Edits optimized for YouTube, Instagram Reels, and digital campaigns.' },
+    ],
+    metric: '94% Client Retention & Over 15M Combined Video Views',
+  },
 ];
 
 export default function Services({ onSelectService = () => { } }) {
@@ -156,97 +176,85 @@ export default function Services({ onSelectService = () => { } }) {
   return (
     <section
       id="services"
-      className="relative w-full py-16 sm:py-24 md:py-28 overflow-hidden"
+      className="relative w-full overflow-hidden bg-[#000000]"
     >
-      {/* Full-bleed GPU Shader Background with Seamless Alpha Fading */}
-      <div
-        className="absolute inset-0 pointer-events-none z-0 w-full h-full overflow-hidden opacity-90"
-        style={{
-          maskImage:
-            'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
-          WebkitMaskImage:
-            'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
-        }}
-      >
-        <ShaderBackground
-          className="w-full h-full"
-          bgColor="#050505"
-          accentColor="#d4d4d8"
-          secondaryColor="#27272a"
-          intensity={0.42}
-          speed={0.20}
-          interactive={true}
-        />
-      </div>
-
-      {/* Seamless Top & Bottom Blending Gradients to #050505 (Zero Direct Cut) */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-36 sm:h-48 md:h-56 bg-gradient-to-b from-[#050505] via-[#050505]/85 to-transparent z-[1]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-36 sm:h-48 md:h-56 bg-gradient-to-t from-[#050505] via-[#050505]/85 to-transparent z-[1]" />
-
       {/* ======================================================== */}
-      {/* SECTION HEADER                                           */}
+      {/* DESKTOP & TABLET VIEW (UNCHANGED >= 768px)               */}
       {/* ======================================================== */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 xl:px-20 flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10 sm:mb-14">
-        <div>
-          {/* Dash & Category Tag */}
-          <div className="flex items-center gap-3 text-xs tracking-[0.25em] text-neutral-400 uppercase font-semibold mb-3.5">
-            <span className="w-7 sm:w-8 h-[2px] bg-[#CCFF00] inline-block" />
-            <span>OUR SERVICES</span>
+      <div className="hidden md:block relative w-full py-10 sm:py-14 md:py-16">
+        {/* Full-bleed GPU Shader Background with Seamless Alpha Fading */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0 w-full h-full overflow-hidden opacity-90"
+          style={{
+            maskImage:
+              'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
+          }}
+        >
+          <ShaderBackground
+            className="w-full h-full"
+            bgColor="#050505"
+            accentColor="#d4d4d8"
+            secondaryColor="#27272a"
+            intensity={0.42}
+            speed={0.20}
+            interactive={true}
+          />
+        </div>
+
+        {/* Seamless Top & Bottom Blending Gradients to #050505 (Zero Direct Cut) */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 sm:h-32 bg-gradient-to-b from-[#050505] via-[#050505]/85 to-transparent z-[1]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 sm:h-32 bg-gradient-to-t from-[#050505] via-[#050505]/85 to-transparent z-[1]" />
+
+        {/* SECTION HEADER */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-10 lg:px-14 xl:px-20 flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 mb-8 sm:mb-12">
+          <div>
+            {/* Dash & Category Tag */}
+            <div className="flex items-center gap-3 text-xs tracking-[0.25em] text-neutral-400 uppercase font-semibold mb-3">
+              <span className="w-6 sm:w-8 h-[2px] bg-[#CCFF00] inline-block" />
+              <span>OUR SERVICES</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white uppercase leading-[1.05]">
+              SOLUTIONS BUILT TO <br />
+              <span className="italic font-black text-white">
+                MAKE BRANDS MOVE.
+              </span>
+            </h2>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase leading-[1.02]">
-            SOLUTIONS BUILT TO <br />
-            <span className="italic font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-neutral-400">
-              MAKE BRANDS MOVE.
-            </span>
-          </h2>
+          <div className="max-w-md lg:pb-2">
+            <p className="text-neutral-300 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
+              From scroll-stopping visual production to high-growth performance marketing, our full-stack capabilities engineer viral momentum and real measurable impact.
+            </p>
+          </div>
         </div>
 
-        <div className="max-w-md lg:pb-2">
-          <p className="text-neutral-300 text-sm sm:text-base leading-relaxed font-normal">
-            From scroll-stopping visual production to high-growth performance marketing, our full-stack capabilities engineer viral momentum and real measurable impact.
-          </p>
-        </div>
-      </div>
-
-      {/* ======================================================== */}
-      {/* EXPANDED INTERACTIVE ORBIT SHOWCASE (NO BOX MARGINS)     */}
-      {/* ======================================================== */}
-      <div className="relative z-10 w-full px-2 sm:px-4 flex flex-col items-center justify-center">
-        {/* Orbit Wrapper with Full Dimensions */}
-        <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center">
+        {/* ORBIT IMAGES 3D DISPLAY WITH VISIBLE DASHED TRACKLINES */}
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 overflow-visible">
           <OrbitImages
             images={orbitImages}
+            onItemClick={handleOrbitItemClick}
             shape="ellipse"
             baseWidth={1400}
-            radiusX={530}
-            radiusY={150}
+            radiusX={460}
+            radiusY={130}
             rotation={-6}
             duration={36}
-            itemSize={165}
-            itemRadius={20}
+            itemSize={140}
+            itemRadius={16}
             depth={0.65}
             showPath={true}
-            pathColor="rgba(255, 255, 255, 0.2)"
+            pathColor="rgba(255, 255, 255, 0.35)"
             pathWidth={1.5}
-            pathDash={4}
+            pathDash={6}
             hoverScale={1.14}
             hoverSpeed={0.2}
             draggable={true}
             clickToFront={true}
-            onItemClick={handleOrbitItemClick}
             centerContent={
-              <div className="relative flex items-center justify-center pointer-events-auto select-none">
-                {/* 3D Volumetric Soft Ambient Glow Core (Monochromatic White) */}
-                <div
-                  className="absolute w-44 sm:w-60 md:w-72 h-44 sm:h-60 md:h-72 rounded-full pointer-events-none -z-10"
-                  style={{
-                    background:
-                      'radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 42%, transparent 70%)',
-                    filter: 'blur(45px)',
-                  }}
-                />
-
+              <div className="relative flex items-center justify-center pointer-events-auto">
                 {/* 3D Floating & Rotating Container */}
                 <div
                   className="relative transition-transform duration-500 ease-out flex items-center justify-center"
@@ -277,7 +285,7 @@ export default function Services({ onSelectService = () => { } }) {
                     <img
                       src={bLogo}
                       alt=""
-                      className="w-24 sm:w-32 md:w-40 h-auto object-contain absolute pointer-events-none select-none opacity-30 blur-[4px]"
+                      className="w-20 sm:w-26 md:w-32 h-auto object-contain absolute pointer-events-none select-none opacity-30 blur-[4px]"
                       style={{
                         transform: 'translateZ(-20px) translateY(14px) scale(0.95)',
                         filter: 'brightness(0) drop-shadow(0 25px 35px rgba(0,0,0,0.95))',
@@ -289,7 +297,7 @@ export default function Services({ onSelectService = () => { } }) {
                     <img
                       src={bLogo}
                       alt=""
-                      className="w-24 sm:w-32 md:w-40 h-auto object-contain absolute pointer-events-none select-none opacity-40"
+                      className="w-20 sm:w-26 md:w-32 h-auto object-contain absolute pointer-events-none select-none opacity-40"
                       style={{
                         transform: 'translateZ(-8px) translate(2.5px, 3px)',
                         filter:
@@ -302,7 +310,7 @@ export default function Services({ onSelectService = () => { } }) {
                     <img
                       src={bLogo}
                       alt="Brand Buzzers 3D B"
-                      className="w-24 sm:w-32 md:w-40 h-auto object-contain relative select-none"
+                      className="w-20 sm:w-26 md:w-32 h-auto object-contain relative select-none"
                       style={{
                         transform: 'translateZ(12px)',
                         filter:
@@ -316,6 +324,18 @@ export default function Services({ onSelectService = () => { } }) {
           />
         </div>
 
+      </div>
+
+      {/* ======================================================== */}
+      {/* MOBILE SCROLL-TRIGGERED VIEW (< 768px)                   */}
+      {/* ======================================================== */}
+      <div className="block md:hidden w-full">
+        <MobileServicesScroller
+          onSelectService={(idx) => {
+            setActiveServiceIndex(idx);
+            setIsModalOpen(true);
+          }}
+        />
       </div>
 
       {/* ======================================================== */}
@@ -379,7 +399,7 @@ export default function Services({ onSelectService = () => { } }) {
 
               {/* Modal Scrollable Body (No visible scrollbar) */}
               <div className="p-4 sm:p-5 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden space-y-4">
-                
+
                 {/* Detailed Overview */}
                 <div>
                   <h4 className="text-[10px] font-mono tracking-[0.22em] text-neutral-400 uppercase font-semibold mb-1.5">

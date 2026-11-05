@@ -59,7 +59,7 @@ export default function Footer({ onBookCall }) {
   return (
     <div
       id="footer"
-      className="relative w-full h-[calc(100dvh-5rem)] min-h-[480px] max-h-[720px] flex flex-col justify-between overflow-hidden bg-[#050505] border-t border-neutral-900"
+      className="relative w-full min-h-[500px] md:h-[calc(100dvh-5rem)] md:min-h-[480px] md:max-h-[720px] flex flex-col justify-between overflow-hidden bg-[#050505] border-t border-neutral-900"
     >
       <BeamWordmarkFooter
         brand="Brand Buzzers"

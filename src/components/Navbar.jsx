@@ -11,7 +11,7 @@ const NAV_ITEMS = [
 ];
 
 export default function Navbar({
-  onBookCall = () => {},
+  onBookCall = () => { },
   activeItem = 'Home',
   customLinks = NAV_ITEMS,
 }) {
@@ -33,7 +33,7 @@ export default function Navbar({
   return (
     <header className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center bg-[#050505] border-b border-[#1a1a1a]">
       <div className="w-full max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
-        
+
         {/* Left: Brand Signature Logo */}
         <a
           href="#home"
@@ -57,11 +57,10 @@ export default function Navbar({
                 key={item.name}
                 href={item.href}
                 onClick={() => handleNavClick(item.name, item.href)}
-                className={`text-sm font-medium tracking-wide transition-colors duration-200 relative py-1 ${
-                  isActive
+                className={`text-sm font-medium tracking-wide transition-colors duration-200 relative py-1 ${isActive
                     ? 'text-white font-semibold'
                     : 'text-neutral-400 hover:text-white'
-                }`}
+                  }`}
               >
                 {item.name}
 
@@ -105,11 +104,10 @@ export default function Navbar({
 
       {/* Mobile Dropdown Menu Drawer */}
       <div
-        className={`md:hidden absolute top-20 left-0 right-0 transition-all duration-300 ease-in-out overflow-hidden border-b border-[#1a1a1a] bg-[#050505] ${
-          mobileMenuOpen
+        className={`md:hidden absolute top-20 left-0 right-0 transition-all duration-300 ease-in-out overflow-hidden border-b border-[#222222] bg-[#050505]/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] ${mobileMenuOpen
             ? 'max-h-96 opacity-100 py-6 px-6'
             : 'max-h-0 opacity-0 py-0 px-6 border-transparent pointer-events-none'
-        }`}
+          }`}
       >
         <div className="flex flex-col gap-3">
           {customLinks.map((item) => {
@@ -119,11 +117,10 @@ export default function Navbar({
                 key={item.name}
                 href={item.href}
                 onClick={() => handleNavClick(item.name, item.href)}
-                className={`flex items-center justify-between text-base font-medium py-2.5 px-4 rounded-xl transition-all ${
-                  isActive
+                className={`flex items-center justify-between text-base font-medium py-2.5 px-4 rounded-xl transition-all ${isActive
                     ? 'text-[#CCFF00] bg-neutral-900 font-semibold'
                     : 'text-neutral-300 hover:text-white hover:bg-neutral-900/50'
-                }`}
+                  }`}
               >
                 <span>{item.name}</span>
                 {isActive && (

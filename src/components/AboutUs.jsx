@@ -12,7 +12,7 @@ export default function AboutUs({
   return (
     <section
       id="about"
-      className={`relative w-full pt-6 sm:pt-10 md:pt-12 pb-6 sm:pb-10 ${transparentBg ? 'bg-transparent' : 'bg-[#050505]'
+      className={`relative w-full pt-4 sm:pt-6 md:pt-8 pb-4 sm:pb-6 ${transparentBg ? 'bg-transparent' : 'bg-[#050505]'
         }`}
     >
       {/* ======================================================== */}
@@ -40,10 +40,10 @@ export default function AboutUs({
       {/* ======================================================== */}
       {/* CONTENT CONTAINER                                        */}
       {/* ======================================================== */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-10 lg:px-12 flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-10">
 
         {/* Left Side: About us heading powered by interactive TechText */}
-        <div className="w-full md:w-1/2 lg:w-3/5 h-28 sm:h-36 md:h-44 relative flex items-center">
+        <div className="w-full md:w-1/2 lg:w-3/5 h-24 sm:h-36 md:h-44 relative flex items-center">
           <TechText
             text={title}
             fontWeight={900}
@@ -58,7 +58,7 @@ export default function AboutUs({
             strokeWidth={1.5}
             specks={15}
             selection={true}
-            labels={true}
+            labels={false}
             draggable={true}
             bounce={0.4}
             clickKick={true}
@@ -70,7 +70,7 @@ export default function AboutUs({
 
         {/* Right Side: Right-aligned text & LEARN MORE button */}
         <div className="flex flex-col items-start md:items-end text-left md:text-right max-w-xl">
-          <p className="text-base sm:text-lg md:text-xl text-neutral-200 font-normal leading-relaxed">
+          <p className="text-sm sm:text-base md:text-xl text-neutral-200 font-normal leading-relaxed">
             {subtitleLine1}{' '}
             <span className="block mt-0.5 sm:mt-1 text-white font-medium">
               {subtitleLine2}
@@ -81,7 +81,7 @@ export default function AboutUs({
             <button
               type="button"
               onClick={onLearnMore}
-              className="group relative inline-flex items-center justify-center px-7 sm:px-8 py-3 rounded-full font-black text-xs sm:text-sm uppercase tracking-wider text-black bg-gradient-to-r from-[#bdf539] to-[#a3eb1a] hover:from-[#c8fa4b] hover:to-[#b0f224] active:scale-95 transition-all duration-200 shadow-[0_0_20px_rgba(189,245,57,0.35)] hover:shadow-[0_0_30px_rgba(189,245,57,0.6)] hover:-translate-y-0.5 cursor-pointer"
+              className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-black text-xs sm:text-sm uppercase tracking-wider text-black bg-gradient-to-r from-[#bdf539] to-[#a3eb1a] hover:from-[#c8fa4b] hover:to-[#b0f224] active:scale-95 transition-all duration-200 shadow-[0_0_20px_rgba(189,245,57,0.35)] hover:shadow-[0_0_30px_rgba(189,245,57,0.6)] hover:-translate-y-0.5 cursor-pointer"
             >
               <span>{buttonText}</span>
             </button>

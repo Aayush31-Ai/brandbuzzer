@@ -104,7 +104,7 @@ export default function BrandMarquee({
   const allLogos = [...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS];
 
   return (
-    <div className={`w-full mt-6 sm:mt-8 pt-3 sm:pt-5 relative overflow-hidden ${className}`}>
+    <div className={`w-full mt-4 sm:mt-6 pt-2 sm:pt-3 relative overflow-hidden ${className}`}>
       {/* Top Subtle Divider */}
       <div className="h-px w-full max-w-4xl mx-auto bg-gradient-to-r from-transparent via-white/10 to-transparent mb-4 sm:mb-5" />
 
@@ -126,7 +126,7 @@ export default function BrandMarquee({
         }}
       >
         <div
-          className="flex items-center gap-12 sm:gap-16 md:gap-20 w-max animate-marquee hover:[animation-play-state:paused] cursor-pointer"
+          className="flex items-center gap-8 sm:gap-16 md:gap-20 w-max animate-marquee hover:[animation-play-state:paused] cursor-pointer"
           style={{
             animationDuration: speed,
           }}

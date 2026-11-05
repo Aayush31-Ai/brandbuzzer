@@ -16,7 +16,7 @@ export default function CTA({
   return (
     <section
       id="cta"
-      className={`relative w-full min-h-[580px] max-h-[880px] py-16 sm:py-20 md:py-24 flex items-center justify-center px-6 sm:px-10 lg:px-14 xl:px-20 max-w-7xl mx-auto overflow-hidden bg-[#050505] text-white ${className}`.trim()}
+      className={`relative w-full py-8 sm:py-12 md:py-14 flex items-center justify-center px-4 sm:px-10 lg:px-14 xl:px-20 max-w-7xl mx-auto overflow-hidden bg-[#050505] text-white ${className}`.trim()}
     >
       {/* Ambient Radial Lighting Glows */}
       <div
@@ -40,16 +40,16 @@ export default function CTA({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
           {/* ======================================================== */}
-          {/* LEFT: 3D INTERACTIVE LUXURY CORE SHOWCASE                */}
+          {/* LEFT: 3D INTERACTIVE LUXURY CORE SHOWCASE (DESKTOP ONLY) */}
           {/* ======================================================== */}
-          <div className="w-full flex items-center justify-center lg:order-1 select-none">
+          <div className="hidden lg:flex w-full items-center justify-center lg:order-1 select-none">
             <InteractiveBlob className="w-full" />
           </div>
 
           {/* ======================================================== */}
           {/* RIGHT: CONTENT + STRICTLY ONE HIGH-CONVERTING BUTTON     */}
           {/* ======================================================== */}
-          <div className="space-y-4 sm:space-y-5 max-w-lg lg:order-2">
+          <div className="space-y-4 sm:space-y-5 max-w-lg mx-auto lg:mx-0 lg:order-2">
             
             {/* Category Dash Tag */}
             <div className="flex items-center gap-3 text-xs tracking-[0.25em] text-neutral-400 uppercase font-semibold">
@@ -91,7 +91,7 @@ export default function CTA({
               <button
                 type="button"
                 onClick={onBookCall}
-                className="group relative inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-black text-xs tracking-wider uppercase text-black bg-[#CCFF00] hover:bg-[#d8ff1a] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_25px_rgba(204,255,0,0.3)] hover:shadow-[0_0_35px_rgba(204,255,0,0.5)] cursor-pointer overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-black text-xs tracking-wider uppercase text-black bg-[#CCFF00] hover:bg-[#d8ff1a] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_25px_rgba(204,255,0,0.3)] hover:shadow-[0_0_35px_rgba(204,255,0,0.5)] cursor-pointer overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>{buttonText}</span>

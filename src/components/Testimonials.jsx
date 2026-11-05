@@ -177,7 +177,7 @@ export function TestimonialCard({
 
 export function DemoOne({ onSelectReview = () => { } }) {
   return (
-    <div className="relative w-full max-w-7xl mx-auto h-[540px] sm:h-[600px] md:h-[640px] overflow-hidden my-4 sm:my-6 [perspective:1000px]">
+    <div className="relative w-full max-w-7xl mx-auto h-[460px] sm:h-[520px] md:h-[560px] overflow-hidden my-2 sm:my-4 [perspective:1000px]">
       {/* 3D Tilted Perspective Wall - Centered with balanced horizontal placement */}
       <div
         className="flex flex-row justify-center items-center gap-4 sm:gap-5 md:gap-6 h-[140%] -mt-[10%] select-none pl-4 sm:pl-8 md:pl-12"
@@ -188,7 +188,7 @@ export function DemoOne({ onSelectReview = () => { } }) {
         }}
       >
         {/* Column 1 (upwards) */}
-        <div className="h-full w-[230px] sm:w-[260px] md:w-[280px] shrink-0">
+        <div className="h-full w-[175px] xs:w-[210px] sm:w-[260px] md:w-[280px] shrink-0">
           <Marquee vertical pauseOnHover repeat={3} className="[--duration:40s] h-full">
             {testimonials.map((review, i) => (
               <TestimonialCard
@@ -201,7 +201,7 @@ export function DemoOne({ onSelectReview = () => { } }) {
         </div>
 
         {/* Column 2 (downwards) */}
-        <div className="h-full w-[230px] sm:w-[260px] md:w-[280px] shrink-0">
+        <div className="h-full w-[175px] xs:w-[210px] sm:w-[260px] md:w-[280px] shrink-0">
           <Marquee vertical pauseOnHover reverse repeat={3} className="[--duration:44s] h-full">
             {testimonials.map((review, i) => (
               <TestimonialCard
@@ -299,7 +299,7 @@ export default function Testimonials({
   return (
     <section
       id="testimonials"
-      className={`relative w-full py-10 sm:py-14 md:py-16 px-6 sm:px-10 lg:px-14 xl:px-20 max-w-7xl mx-auto overflow-hidden ${className}`}
+      className={`relative w-full py-8 sm:py-10 md:py-12 px-4 sm:px-10 lg:px-14 xl:px-20 max-w-7xl mx-auto overflow-hidden ${className}`}
     >
       {/* Soft Ambient Glows */}
       <div
@@ -331,7 +331,7 @@ export default function Testimonials({
           </div>
 
           {/* Main Title */}
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase leading-[1.02]">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white uppercase leading-[1.05]">
             {titleLine1} <br />
             <span className="italic font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-neutral-400">
               {titleLine2}

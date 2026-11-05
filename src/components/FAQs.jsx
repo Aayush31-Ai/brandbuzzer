@@ -3,125 +3,125 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react';
 
 const FAQ_CATEGORIES = [
-  'Viral Strategy',
-  'Content & Video',
-  'Pricing & Plans',
-  'Workflow & Guarantee',
+  'Web Development',
+  'Mobile Development',
+  'UI/UX Design',
+  'Copywriting',
 ];
 
 const FAQS_DATA = [
-  // 1. Viral Strategy (Exactly 4)
+  // 1. Web Development (Exactly 4 from reference image)
   {
-    category: 'Viral Strategy',
-    question: 'How does Brand Buzzers approach viral brand growth?',
+    category: 'Web Development',
+    question: 'What is web development?',
     answer:
-      'We do not rely on random luck. We engineer structural buzz by dissecting cultural momentum, audience psychology, and short-form retention curves. Every campaign pairs bold creative hooks with algorithmic distribution systems to turn viewers into buyers.',
+      'Web development involves building, creating, and maintaining websites and web applications. It encompasses everything from frontend user interface design, styling, and interactivity to backend logic, database management, server configuration, and high-performance hosting infrastructure.',
   },
   {
-    category: 'Viral Strategy',
-    question: 'Which industries and company stages do you work with?',
+    category: 'Web Development',
+    question: 'What programming languages are essential for web development?',
     answer:
-      'We partner with venture-backed startups, fast-scaling D2C brands, luxury streetwear, fintech disruptors, and consumer tech giants who refuse to be boring and want to own the digital conversation.',
+      'The foundational languages of the modern web are HTML5, CSS3, and JavaScript/TypeScript. For backend architectures, popular languages and runtimes include Node.js, Python, Go, and PHP, paired with modern frameworks such as React, Next.js, and Vue.',
   },
   {
-    category: 'Viral Strategy',
-    question: 'How do you ensure campaigns match our exact brand identity?',
+    category: 'Web Development',
+    question: "What's the difference between front-end and back-end development?",
     answer:
-      'During onboarding, we codify your brand voice, visual aesthetics, taboos, and core differentiators. Every script and creative angle passes rigorous internal editorial reviews before filming.',
+      'Front-end development focuses on the user-facing side of a website — the visual layout, interactive elements, typography, and responsive design. Back-end development powers the server-side logic, handling user authentication, databases, business operations, and API integrations behind the scenes.',
   },
   {
-    category: 'Viral Strategy',
-    question: 'What is your core formula for 9:16 short-form retention?',
+    category: 'Web Development',
+    question: 'How long does it typically take to develop a website?',
     answer:
-      'We optimize the first 1.5-second visual hook, use dynamic pacing, pattern interrupts, and psychological open loops that maximize completion rates and trigger algorithmic recommendation feeds.',
-  },
-
-  // 2. Content & Video (Exactly 4)
-  {
-    category: 'Content & Video',
-    question: 'What is included in our monthly content deliverables?',
-    answer:
-      'Depending on your tier: 20 to 60+ bespoke high-retention short-form videos (TikTok, Reels, Shorts), creative direction, scriptwriting, editing sprints, custom motion graphics, sound design, and analytics reporting.',
-  },
-  {
-    category: 'Content & Video',
-    question: 'Do you handle the entire production process end-to-end?',
-    answer:
-      'Yes. From ideation, scriptwriting, and hook testing to high-velocity post-production, VFX, caption styling, and cross-platform scheduling — our team manages the entire creative pipeline.',
-  },
-  {
-    category: 'Content & Video',
-    question: 'Can you work with our existing footage and creator assets?',
-    answer:
-      'Absolutely. We regularly transform raw brand archives, podcast clips, UGC submissions, and founders’ interviews into high-performing short-form narrative reels.',
-  },
-  {
-    category: 'Content & Video',
-    question: 'How many revisions do we get on video deliverables?',
-    answer:
-      'All deliverables include rapid-turnaround revision rounds via Frame.io or dedicated review channels so your feedback is incorporated within 24 hours.',
+      'A high-performance landing page or marketing website typically takes 2 to 4 weeks from concept to deployment. Complex custom web applications with database architectures, authentication, and custom CMS integrations usually take between 6 to 12 weeks depending on scope and feature complexity.',
   },
 
-  // 3. Pricing & Plans (Exactly 4)
+  // 2. Mobile Development (Exactly 4)
   {
-    category: 'Pricing & Plans',
-    question: 'What are your engagement models and retainers?',
+    category: 'Mobile Development',
+    question: 'What platforms do you build mobile applications for?',
     answer:
-      'We offer three core structures: High-Velocity Growth Retainers (monthly execution), Bespoke Campaign Drops (product launches), and Performance Scale Partnerships tailored to your revenue goals.',
+      'We engineer mobile applications for both iOS and Android. Depending on client requirements and performance targets, we build high-performance cross-platform apps using React Native and Flutter, or native apps using Swift and Kotlin.',
   },
   {
-    category: 'Pricing & Plans',
-    question: 'What happens if a campaign does not hit agreed benchmarks?',
+    category: 'Mobile Development',
+    question: 'What is the process of getting an app published on App Store & Google Play?',
     answer:
-      'We stand behind our craft with a quantitative guarantee. If our first 30-day sprint does not hit agreed KPI benchmarks, we continue optimizing and deploying creative variants at zero extra cost until we crush the goal.',
+      'We handle the entire deployment pipeline — from configuring developer accounts, generating security certificates, and fulfilling compliance checklists to optimizing App Store Optimization (ASO) assets and passing Apple and Google app store review guidelines.',
   },
   {
-    category: 'Pricing & Plans',
-    question: 'Are we locked into long-term contracts?',
+    category: 'Mobile Development',
+    question: 'What is the difference between native and cross-platform mobile apps?',
     answer:
-      'No. We earn your partnership month over month. After the initial 90-day growth sprint, our standard retainer operates with flexible 30-day rolling commitments.',
+      'Native apps are built specifically for one operating system (iOS or Android), offering the highest device-level performance and hardware access. Cross-platform apps share a single unified codebase for both platforms, significantly lowering development time and maintenance costs without sacrificing visual fluidity.',
   },
   {
-    category: 'Pricing & Plans',
-    question: 'Do you offer ad-spend management or organic-only services?',
+    category: 'Mobile Development',
+    question: 'How long does it typically take to develop a custom mobile app?',
     answer:
-      'We provide organic algorithmic distribution as well as high-performing paid TikTok & Meta ad creative variants designed specifically to lower customer acquisition costs (CAC).',
+      'A streamlined MVP (Minimum Viable Product) mobile application typically takes 6 to 8 weeks. Comprehensive feature-rich enterprise apps with custom APIs, offline sync, real-time messaging, and payment gateways usually take 12 to 16 weeks.',
   },
 
-  // 4. Workflow & Guarantee (Exactly 4)
+  // 3. UI/UX Design (Exactly 4)
   {
-    category: 'Workflow & Guarantee',
-    question: 'How fast do we see tangible results after kickoff?',
+    category: 'UI/UX Design',
+    question: 'What is the difference between UI and UX design?',
     answer:
-      'Most partner brands see their first organic viral lift and reach surge within 14 to 21 days of deployment. Our rapid-iteration sprint delivers initial creative assets in Week 1.',
+      'UX (User Experience) design focuses on the user journey, information architecture, wireframing, and problem-solving to make the interface intuitive and frictionless. UI (User Interface) design crafts the visual look and feel, including typography, color palettes, micro-interactions, components, and brand aesthetics.',
   },
   {
-    category: 'Workflow & Guarantee',
-    question: 'How much time is required from our internal team?',
+    category: 'UI/UX Design',
+    question: 'What design tools and prototyping software do you use?',
     answer:
-      'We operate like an embedded unit. After a 60-minute strategic kickoff and onboarding audit, we handle 95% of the heavy lifting. You only spend 15 minutes a week approving deliverables.',
+      'Our primary design system workflow is built on Figma for collaborative design, component libraries, and interactive prototyping. We also utilize Spline for 3D web assets, Adobe After Effects for motion choreography, and Principle for high-fidelity micro-interactions.',
   },
   {
-    category: 'Workflow & Guarantee',
-    question: 'How do we track analytics and campaign performance?',
+    category: 'UI/UX Design',
+    question: 'How do you approach responsive design for mobile and web?',
     answer:
-      'You get a dedicated live performance dashboard and a direct Slack channel with our strategists, along with weekly performance syncs covering hook rates, watch times, and conversion lift.',
+      'We design mobile-first with adaptive fluid typography and responsive grid systems. Every screen is rigorously tested across mobile viewports (320px–430px), tablets (768px–1024px), laptops, and ultra-wide desktop monitors to ensure visual balance.',
   },
   {
-    category: 'Workflow & Guarantee',
-    question: 'How do we get started with Brand Buzzers?',
+    category: 'UI/UX Design',
+    question: 'What is included in your design system deliverables?',
     answer:
-      'Book a 20-minute discovery call where we review your current brand reach, identify viral growth opportunities, and propose a tailored roadmap for your team.',
+      'Deliverables include atomic design tokens (colors, typography, spacing, shadows), responsive layout grids, dark/light theme definitions, interactive component variants with hover/active states, and comprehensive handoff documentation for developers.',
+  },
+
+  // 4. Copywriting (Exactly 4)
+  {
+    category: 'Copywriting',
+    question: 'What types of copywriting services do you provide?',
+    answer:
+      'We deliver full-spectrum digital copywriting: high-converting landing page copy, brand messaging frameworks, short-form video hooks & scripts, social media captions, email sequences, and paid ad creative variants.',
+  },
+  {
+    category: 'Copywriting',
+    question: 'How do you tailor copy to match our specific brand voice?',
+    answer:
+      'During kickoff, we codify your brand voice guide — defining tone spectrums (e.g., bold, witty, authoritative, minimalist), audience pain points, banned jargon, and psychological triggers to make every sentence authentically resonate.',
+  },
+  {
+    category: 'Copywriting',
+    question: 'What is the difference between brand copywriting and direct response copy?',
+    answer:
+      'Brand copywriting builds emotional connection, identity, and long-term brand recall. Direct response copywriting is laser-focused on immediate measurable action — convincing readers to click, subscribe, book a call, or purchase right away.',
+  },
+  {
+    category: 'Copywriting',
+    question: 'How does compelling copywriting improve website conversion rates?',
+    answer:
+      'Compelling, benefit-driven headlines and clear value propositions eliminate cognitive friction. Clear calls-to-action and empathetic pain-point positioning regularly double or triple visitor conversion rates without changing incoming traffic.',
   },
 ];
 
 export default function FAQs({ className = '', onBookCall }) {
-  const [activeCategory, setActiveCategory] = useState('Viral Strategy');
-  const [openIndex, setOpenIndex] = useState(0); // First item open by default
+  const [activeCategory, setActiveCategory] = useState('Web Development');
+  const [openIndex, setOpenIndex] = useState(null); // Collapsed by default matching reference image
 
   const currentFaqs = FAQS_DATA.filter(
     (faq) => faq.category === activeCategory
-  ).slice(0, 4); // Exactly 4 questions
+  ).slice(0, 4); // Exactly 4 questions per user request
 
   const toggleFaq = (index) => {
     setOpenIndex((prev) => (prev === index ? null : index));
@@ -130,23 +130,23 @@ export default function FAQs({ className = '', onBookCall }) {
   return (
     <section
       id="faq"
-      className={`relative w-full py-12 sm:py-16 px-4 sm:px-6 bg-[#050505] text-white overflow-hidden ${className}`.trim()}
+      className={`relative w-full py-8 sm:py-12 px-4 sm:px-6 bg-[#000000] text-white overflow-hidden ${className}`.trim()}
     >
-      {/* Subtle top spotlight glow */}
+      {/* Subtle top spotlight glow matching reference screenshot */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[220px] pointer-events-none opacity-30"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[550px] h-[240px] pointer-events-none opacity-30"
         style={{
           background:
-            'radial-gradient(ellipse at top, rgba(255, 255, 255, 0.08) 0%, rgba(204, 255, 0, 0.02) 40%, transparent 70%)',
-          filter: 'blur(60px)',
+            'radial-gradient(ellipse at top, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 70%)',
+          filter: 'blur(55px)',
         }}
       />
 
       {/* Compact container matching screenshot proportions */}
       <div className="relative z-10 max-w-2xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-6 sm:mb-8">
-          <p className="text-neutral-400 text-xs font-normal tracking-wide mb-2">
+        <div className="text-center mb-4 sm:mb-6">
+          <p className="text-neutral-400 text-xs sm:text-sm font-normal tracking-wide mb-1.5">
             Let's answer some questions
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight">
@@ -154,8 +154,8 @@ export default function FAQs({ className = '', onBookCall }) {
           </h2>
         </div>
 
-        {/* 4 Category Filter Pills */}
-        <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-2.5 mb-7 sm:mb-8">
+        {/* 4 Category Filter Pills matching reference screenshot */}
+        <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-2.5 mb-5 sm:mb-6">
           {FAQ_CATEGORIES.map((category) => {
             const isActive = activeCategory === category;
             return (
@@ -164,7 +164,7 @@ export default function FAQs({ className = '', onBookCall }) {
                 type="button"
                 onClick={() => {
                   setActiveCategory(category);
-                  setOpenIndex(0); // Open first item on category switch
+                  setOpenIndex(null); // Reset open state on tab switch
                 }}
                 className={`px-3.5 sm:px-4 py-1.5 rounded-lg text-xs sm:text-[13px] font-medium transition-all duration-200 cursor-pointer ${
                   isActive
@@ -187,8 +187,8 @@ export default function FAQs({ className = '', onBookCall }) {
                 key={`${faq.question}-${index}`}
                 className={`rounded-xl border transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? 'bg-[#121215] border-white/20 shadow-md'
-                    : 'bg-[#0d0d0f] border-white/[0.07] hover:border-white/[0.14] hover:bg-[#101013]'
+                    ? 'bg-[#131317] border-white/20 shadow-md'
+                    : 'bg-[#0e0e11] border-white/[0.07] hover:border-white/[0.14] hover:bg-[#111115]'
                 }`}
               >
                 <button
@@ -197,7 +197,7 @@ export default function FAQs({ className = '', onBookCall }) {
                   className="w-full text-left px-4 sm:px-5 py-3.5 sm:py-4 flex items-center justify-between gap-3 cursor-pointer focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-xs sm:text-sm md:text-[15px] font-medium text-neutral-200 hover:text-white transition-colors leading-snug">
+                  <span className="text-xs sm:text-sm md:text-[14.5px] font-medium text-neutral-200 hover:text-white transition-colors leading-snug">
                     {faq.question}
                   </span>
                   <div

@@ -70,14 +70,14 @@ export function BackgroundPaths({
         <FloatingPaths position={-1} />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 sm:px-8 text-center pt-24 pb-16">
+      <div className="relative z-10 container mx-auto px-4 sm:px-8 text-center pt-16 sm:pt-20 pb-10 sm:pb-12">
         <div className="max-w-5xl mx-auto flex flex-col items-center">
           
           {/* Main Title Container */}
-          <h1 className="mb-10 tracking-tight text-white flex flex-col items-center gap-2 sm:gap-3">
+          <h1 className="mb-6 sm:mb-8 tracking-tight text-white flex flex-col items-center gap-2 sm:gap-3">
             
             {/* Upper Line: Larger, dominant text */}
-            <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.08]">
+            <span className="block text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.08]">
               {wordsLine1.map((word, wordIndex) => (
                 <span
                   key={wordIndex}
@@ -103,7 +103,7 @@ export function BackgroundPaths({
             </span>
 
             {/* Lower Line: A little smaller than upper text, with "Brands" highlighted */}
-            <span className="block text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15]">
+            <span className="block text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15]">
               {wordsLine2.map((word, wordIndex) => {
                 const cleanWord = word.toLowerCase().replace(/[^a-z]/g, '');
                 const cleanHighlight = highlightWord.toLowerCase().replace(/[^a-z]/g, '');

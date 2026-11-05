@@ -176,7 +176,7 @@ export default function Services({ onSelectService = () => { } }) {
   return (
     <section
       id="services"
-      className="relative w-full overflow-hidden bg-[#000000]"
+      className="relative w-full overflow-hidden bg-[#000000] scroll-mt-20"
     >
       {/* ======================================================== */}
       {/* DESKTOP & TABLET VIEW (UNCHANGED >= 768px)               */}
@@ -232,271 +232,271 @@ export default function Services({ onSelectService = () => { } }) {
         </div>
 
         {/* ORBIT IMAGES 3D DISPLAY WITH VISIBLE DASHED TRACKLINES */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 overflow-visible">
-          <OrbitImages
-            images={orbitImages}
-            onItemClick={handleOrbitItemClick}
-            shape="ellipse"
-            baseWidth={1400}
-            radiusX={460}
-            radiusY={130}
-            rotation={-6}
-            duration={36}
-            itemSize={140}
-            itemRadius={16}
-            depth={0.65}
-            showPath={true}
-            pathColor="rgba(255, 255, 255, 0.35)"
-            pathWidth={1.5}
-            pathDash={6}
-            hoverScale={1.14}
-            hoverSpeed={0.2}
-            draggable={true}
-            clickToFront={true}
-            centerContent={
-              <div className="relative flex items-center justify-center pointer-events-auto">
-                {/* 3D Floating & Rotating Container */}
-                <div
-                  className="relative transition-transform duration-500 ease-out flex items-center justify-center"
-                  style={{
-                    perspective: '1200px',
-                    transformStyle: 'preserve-3d',
-                  }}
-                >
-                  <motion.div
-                    animate={{
-                      rotateY: [-10, 10, -10],
-                      rotateX: [6, -6, 6],
-                      y: [-8, 8, -8],
-                    }}
-                    transition={{
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                    }}
+          <div className="relative z-10 w-full max-w-5xl mx-auto px-4 overflow-visible">
+            <OrbitImages
+              images={orbitImages}
+              onItemClick={handleOrbitItemClick}
+              shape="ellipse"
+              baseWidth={1400}
+              radiusX={460}
+              radiusY={130}
+              rotation={-6}
+              duration={36}
+              itemSize={140}
+              itemRadius={16}
+              depth={0.65}
+              showPath={true}
+              pathColor="rgba(255, 255, 255, 0.35)"
+              pathWidth={1.5}
+              pathDash={6}
+              hoverScale={1.14}
+              hoverSpeed={0.2}
+              draggable={true}
+              clickToFront={true}
+              centerContent={
+                <div className="relative flex items-center justify-center pointer-events-auto">
+                  {/* 3D Floating & Rotating Container */}
+                  <div
+                    className="relative transition-transform duration-500 ease-out flex items-center justify-center"
                     style={{
+                      perspective: '1200px',
                       transformStyle: 'preserve-3d',
                     }}
-                    className="relative flex items-center justify-center cursor-pointer group"
-                    whileHover={{ scale: 1.08 }}
-                    onClick={() => setIsModalOpen(true)}
                   >
-                    {/* 3D Back Cast Deep Shadow */}
-                    <img
-                      src={bLogo}
-                      alt=""
-                      className="w-20 sm:w-26 md:w-32 h-auto object-contain absolute pointer-events-none select-none opacity-30 blur-[4px]"
-                      style={{
-                        transform: 'translateZ(-20px) translateY(14px) scale(0.95)',
-                        filter: 'brightness(0) drop-shadow(0 25px 35px rgba(0,0,0,0.95))',
+                    <motion.div
+                      animate={{
+                        rotateY: [-10, 10, -10],
+                        rotateX: [6, -6, 6],
+                        y: [-8, 8, -8],
                       }}
-                      aria-hidden="true"
-                    />
+                      transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                      }}
+                      style={{
+                        transformStyle: 'preserve-3d',
+                      }}
+                      className="relative flex items-center justify-center cursor-pointer group"
+                      whileHover={{ scale: 1.08 }}
+                      onClick={() => setIsModalOpen(true)}
+                    >
+                      {/* 3D Back Cast Deep Shadow */}
+                      <img
+                        src={bLogo}
+                        alt=""
+                        className="w-20 sm:w-26 md:w-32 h-auto object-contain absolute pointer-events-none select-none opacity-30 blur-[4px]"
+                        style={{
+                          transform: 'translateZ(-20px) translateY(14px) scale(0.95)',
+                          filter: 'brightness(0) drop-shadow(0 25px 35px rgba(0,0,0,0.95))',
+                        }}
+                        aria-hidden="true"
+                      />
 
-                    {/* 3D Ambient White Rim Extrusion Layer */}
-                    <img
-                      src={bLogo}
-                      alt=""
-                      className="w-20 sm:w-26 md:w-32 h-auto object-contain absolute pointer-events-none select-none opacity-40"
-                      style={{
-                        transform: 'translateZ(-8px) translate(2.5px, 3px)',
-                        filter:
-                          'drop-shadow(0 0 12px rgba(255,255,255,0.25)) drop-shadow(0 0 24px rgba(255,255,255,0.1))',
-                      }}
-                      aria-hidden="true"
-                    />
+                      {/* 3D Ambient White Rim Extrusion Layer */}
+                      <img
+                        src={bLogo}
+                        alt=""
+                        className="w-20 sm:w-26 md:w-32 h-auto object-contain absolute pointer-events-none select-none opacity-40"
+                        style={{
+                          transform: 'translateZ(-8px) translate(2.5px, 3px)',
+                          filter:
+                            'drop-shadow(0 0 12px rgba(255,255,255,0.25)) drop-shadow(0 0 24px rgba(255,255,255,0.1))',
+                        }}
+                        aria-hidden="true"
+                      />
 
-                    {/* 3D Front Main Specular Layer (Clean White 3D Bevel) */}
-                    <img
-                      src={bLogo}
-                      alt="Brand Buzzers 3D B"
-                      className="w-20 sm:w-26 md:w-32 h-auto object-contain relative select-none"
-                      style={{
-                        transform: 'translateZ(12px)',
-                        filter:
-                          'drop-shadow(1px 2px 0px rgba(255,255,255,0.95)) drop-shadow(2px 4px 1px rgba(180,180,180,0.4)) drop-shadow(0 12px 28px rgba(0,0,0,0.9))',
-                      }}
-                    />
-                  </motion.div>
+                      {/* 3D Front Main Specular Layer (Clean White 3D Bevel) */}
+                      <img
+                        src={bLogo}
+                        alt="Brand Buzzers 3D B"
+                        className="w-20 sm:w-26 md:w-32 h-auto object-contain relative select-none"
+                        style={{
+                          transform: 'translateZ(12px)',
+                          filter:
+                            'drop-shadow(1px 2px 0px rgba(255,255,255,0.95)) drop-shadow(2px 4px 1px rgba(180,180,180,0.4)) drop-shadow(0 12px 28px rgba(0,0,0,0.9))',
+                        }}
+                      />
+                    </motion.div>
+                  </div>
                 </div>
-              </div>
-            }
+              }
+            />
+          </div>
+
+        </div>
+
+        {/* ======================================================== */}
+        {/* MOBILE SCROLL-TRIGGERED VIEW (< 768px)                   */}
+        {/* ======================================================== */}
+        <div className="block md:hidden w-full">
+          <MobileServicesScroller
+            onSelectService={(idx) => {
+              setActiveServiceIndex(idx);
+              setIsModalOpen(true);
+            }}
           />
         </div>
 
-      </div>
-
-      {/* ======================================================== */}
-      {/* MOBILE SCROLL-TRIGGERED VIEW (< 768px)                   */}
-      {/* ======================================================== */}
-      <div className="block md:hidden w-full">
-        <MobileServicesScroller
-          onSelectService={(idx) => {
-            setActiveServiceIndex(idx);
-            setIsModalOpen(true);
-          }}
-        />
-      </div>
-
-      {/* ======================================================== */}
-      {/* SERVICE DETAILS EXPANDED MODAL (CLICK TO VIEW INFO)      */}
-      {/* ======================================================== */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={() => setIsModalOpen(false)}
-            className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-xl flex items-center justify-center p-3 sm:p-4 overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-          >
+        {/* ======================================================== */}
+        {/* SERVICE DETAILS EXPANDED MODAL (CLICK TO VIEW INFO)      */}
+        {/* ======================================================== */}
+        <AnimatePresence>
+          {isModalOpen && (
             <motion.div
-              initial={{ scale: 0.94, opacity: 0, y: 16 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.94, opacity: 0, y: 16 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-xl bg-[#0d0d0d] border border-white/15 rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.95)] max-h-[88vh] flex flex-col [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setIsModalOpen(false)}
+              className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-xl flex items-center justify-center p-3 sm:p-4 overflow-hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
             >
-              {/* Modal Hero Banner (Compact) */}
-              <div className="relative h-36 sm:h-44 w-full shrink-0 overflow-hidden bg-neutral-900">
-                <img
-                  src={activeService.image}
-                  alt={activeService.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d]/55 to-black/35" />
+              <motion.div
+                initial={{ scale: 0.94, opacity: 0, y: 16 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.94, opacity: 0, y: 16 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-full max-w-xl bg-[#0d0d0d] border border-white/15 rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.95)] max-h-[88vh] flex flex-col [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+              >
+                {/* Modal Hero Banner (Compact) */}
+                <div className="relative h-36 sm:h-44 w-full shrink-0 overflow-hidden bg-neutral-900">
+                  <img
+                    src={activeService.image}
+                    alt={activeService.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d]/55 to-black/35" />
 
-                {/* Close Button */}
-                <button
-                  type="button"
-                  onClick={() => setIsModalOpen(false)}
-                  className="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-black/70 hover:bg-black border border-white/20 hover:border-[#CCFF00] text-white hover:text-[#CCFF00] flex items-center justify-center transition-all duration-200 shadow-xl cursor-pointer"
-                  aria-label="Close modal"
-                >
-                  <X className="w-4 h-4" />
-                </button>
+                  {/* Close Button */}
+                  <button
+                    type="button"
+                    onClick={() => setIsModalOpen(false)}
+                    className="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-black/70 hover:bg-black border border-white/20 hover:border-[#CCFF00] text-white hover:text-[#CCFF00] flex items-center justify-center transition-all duration-200 shadow-xl cursor-pointer"
+                    aria-label="Close modal"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
 
-                {/* Top Left Badge */}
-                <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2 backdrop-blur-md bg-black/60 border border-white/15 px-3 py-1 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#CCFF00] shadow-[0_0_8px_#CCFF00]" />
-                  <span className="text-[10px] font-mono font-bold text-white tracking-widest">
-                    SERVICE {activeService.index} / {String(SERVICES_DATA.length).padStart(2, '0')}
-                  </span>
-                </div>
+                  {/* Top Left Badge */}
+                  <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2 backdrop-blur-md bg-black/60 border border-white/15 px-3 py-1 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#CCFF00] shadow-[0_0_8px_#CCFF00]" />
+                    <span className="text-[10px] font-mono font-bold text-white tracking-widest">
+                      SERVICE {activeService.index} / {String(SERVICES_DATA.length).padStart(2, '0')}
+                    </span>
+                  </div>
 
-                {/* Floating Service Title in Image */}
-                <div className="absolute bottom-3.5 left-4 sm:left-5 right-4 sm:right-5 z-10">
-                  <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight leading-tight">
-                    {activeService.title}
-                  </h3>
-                  <p className="text-[11px] sm:text-xs font-medium text-[#CCFF00] mt-0.5 tracking-wide">
-                    {activeService.tagline}
-                  </p>
-                </div>
-              </div>
-
-              {/* Modal Scrollable Body (No visible scrollbar) */}
-              <div className="p-4 sm:p-5 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden space-y-4">
-
-                {/* Detailed Overview */}
-                <div>
-                  <h4 className="text-[10px] font-mono tracking-[0.22em] text-neutral-400 uppercase font-semibold mb-1.5">
-                    OVERVIEW & APPROACH
-                  </h4>
-                  <p className="text-xs sm:text-[13px] text-neutral-300 leading-relaxed font-normal">
-                    {activeService.longDescription}
-                  </p>
-                </div>
-
-                {/* Core Deliverables (Compact 2x2 Grid) */}
-                <div>
-                  <h4 className="text-[10px] font-mono tracking-[0.22em] text-neutral-400 uppercase font-semibold mb-2">
-                    WHAT WE DELIVER
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {activeService.deliverables?.map((deliv, idx) => (
-                      <div
-                        key={idx}
-                        className="p-2.5 sm:p-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors"
-                      >
-                        <div className="flex items-center gap-1.5 mb-0.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#CCFF00] shrink-0" />
-                          <span className="text-[11px] sm:text-xs font-bold text-white uppercase tracking-tight">
-                            {deliv.title}
-                          </span>
-                        </div>
-                        <p className="text-[10px] sm:text-[11px] text-neutral-400 leading-normal pl-5">
-                          {deliv.desc}
-                        </p>
-                      </div>
-                    ))}
+                  {/* Floating Service Title in Image */}
+                  <div className="absolute bottom-3.5 left-4 sm:left-5 right-4 sm:right-5 z-10">
+                    <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight leading-tight">
+                      {activeService.title}
+                    </h3>
+                    <p className="text-[11px] sm:text-xs font-medium text-[#CCFF00] mt-0.5 tracking-wide">
+                      {activeService.tagline}
+                    </p>
                   </div>
                 </div>
 
-                {/* Impact Metric Highlight */}
-                {activeService.metric && (
-                  <div className="p-2.5 sm:p-3 rounded-xl bg-gradient-to-r from-[#CCFF00]/10 via-[#CCFF00]/5 to-transparent border border-[#CCFF00]/25 flex items-center gap-2.5">
-                    <Sparkles className="w-4 h-4 text-[#CCFF00] shrink-0" />
-                    <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                      <span className="text-[9px] font-mono uppercase tracking-widest text-[#CCFF00] font-bold">
-                        EXPECTED IMPACT:
-                      </span>
-                      <span className="text-xs font-bold text-white tracking-tight">
-                        {activeService.metric}
-                      </span>
+                {/* Modal Scrollable Body (No visible scrollbar) */}
+                <div className="p-4 sm:p-5 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden space-y-4">
+
+                  {/* Detailed Overview */}
+                  <div>
+                    <h4 className="text-[10px] font-mono tracking-[0.22em] text-neutral-400 uppercase font-semibold mb-1.5">
+                      OVERVIEW & APPROACH
+                    </h4>
+                    <p className="text-xs sm:text-[13px] text-neutral-300 leading-relaxed font-normal">
+                      {activeService.longDescription}
+                    </p>
+                  </div>
+
+                  {/* Core Deliverables (Compact 2x2 Grid) */}
+                  <div>
+                    <h4 className="text-[10px] font-mono tracking-[0.22em] text-neutral-400 uppercase font-semibold mb-2">
+                      WHAT WE DELIVER
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {activeService.deliverables?.map((deliv, idx) => (
+                        <div
+                          key={idx}
+                          className="p-2.5 sm:p-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors"
+                        >
+                          <div className="flex items-center gap-1.5 mb-0.5">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#CCFF00] shrink-0" />
+                            <span className="text-[11px] sm:text-xs font-bold text-white uppercase tracking-tight">
+                              {deliv.title}
+                            </span>
+                          </div>
+                          <p className="text-[10px] sm:text-[11px] text-neutral-400 leading-normal pl-5">
+                            {deliv.desc}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                )}
 
-              </div>
+                  {/* Impact Metric Highlight */}
+                  {activeService.metric && (
+                    <div className="p-2.5 sm:p-3 rounded-xl bg-gradient-to-r from-[#CCFF00]/10 via-[#CCFF00]/5 to-transparent border border-[#CCFF00]/25 flex items-center gap-2.5">
+                      <Sparkles className="w-4 h-4 text-[#CCFF00] shrink-0" />
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                        <span className="text-[9px] font-mono uppercase tracking-widest text-[#CCFF00] font-bold">
+                          EXPECTED IMPACT:
+                        </span>
+                        <span className="text-xs font-bold text-white tracking-tight">
+                          {activeService.metric}
+                        </span>
+                      </div>
+                    </div>
+                  )}
 
-              {/* Modal Footer Controls (Compact) */}
-              <div className="p-3.5 sm:p-4 bg-black/70 border-t border-white/10 flex items-center justify-between gap-3 mt-auto">
-                {/* Carousel Navigation Between Services */}
-                <div className="flex items-center gap-1.5">
+                </div>
+
+                {/* Modal Footer Controls (Compact) */}
+                <div className="p-3.5 sm:p-4 bg-black/70 border-t border-white/10 flex items-center justify-between gap-3 mt-auto">
+                  {/* Carousel Navigation Between Services */}
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={handlePrevService}
+                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[11px] font-semibold text-neutral-300 hover:text-white transition-all cursor-pointer"
+                    >
+                      <ChevronLeft className="w-3.5 h-3.5" />
+                      <span>Prev</span>
+                    </button>
+
+                    <span className="text-[11px] font-mono text-neutral-400 px-1.5">
+                      {activeService.index} / {String(SERVICES_DATA.length).padStart(2, '0')}
+                    </span>
+
+                    <button
+                      type="button"
+                      onClick={handleNextService}
+                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[11px] font-semibold text-neutral-300 hover:text-white transition-all cursor-pointer"
+                    >
+                      <span>Next</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+
+                  {/* Primary Booking CTA */}
                   <button
                     type="button"
-                    onClick={handlePrevService}
-                    className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[11px] font-semibold text-neutral-300 hover:text-white transition-all cursor-pointer"
+                    onClick={() => {
+                      setIsModalOpen(false);
+                      onSelectService(activeService);
+                    }}
+                    className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-full font-black text-xs uppercase tracking-wider text-black bg-[#CCFF00] hover:bg-[#d8ff1a] active:scale-95 transition-all shadow-[0_0_15px_rgba(204,255,0,0.3)] hover:shadow-[0_0_25px_rgba(204,255,0,0.5)] cursor-pointer"
                   >
-                    <ChevronLeft className="w-3.5 h-3.5" />
-                    <span>Prev</span>
-                  </button>
-
-                  <span className="text-[11px] font-mono text-neutral-400 px-1.5">
-                    {activeService.index} / {String(SERVICES_DATA.length).padStart(2, '0')}
-                  </span>
-
-                  <button
-                    type="button"
-                    onClick={handleNextService}
-                    className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[11px] font-semibold text-neutral-300 hover:text-white transition-all cursor-pointer"
-                  >
-                    <span>Next</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
+                    <span>Book Strategy Call</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
 
-                {/* Primary Booking CTA */}
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIsModalOpen(false);
-                    onSelectService(activeService);
-                  }}
-                  className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-full font-black text-xs uppercase tracking-wider text-black bg-[#CCFF00] hover:bg-[#d8ff1a] active:scale-95 transition-all shadow-[0_0_15px_rgba(204,255,0,0.3)] hover:shadow-[0_0_25px_rgba(204,255,0,0.5)] cursor-pointer"
-                >
-                  <span>Book Strategy Call</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
 
     </section>
   );

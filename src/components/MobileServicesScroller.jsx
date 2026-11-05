@@ -66,8 +66,8 @@ const SERVICES = [
   },
 ];
 
-// Node Y coordinates in the 360x600 SVG viewBox
-const NODE_Y = [50, 150, 250, 350, 450, 550];
+// Node Y coordinates in the 360x600 SVG viewBox (compacted & shifted upward to eliminate 6th point collision)
+const NODE_Y = [50, 130, 210, 290, 370, 440];
 
 export default function MobileServicesScroller({ onSelectService }) {
   const triggerRef = useRef(null);
@@ -183,7 +183,7 @@ export default function MobileServicesScroller({ onSelectService }) {
       );
 
       // Node length fractions along the S-curve
-      const fractions = [0.12, 0.29, 0.46, 0.63, 0.81, 1.0];
+      const fractions = [0.08, 0.25, 0.42, 0.60, 0.78, 0.94];
       const stepDuration = 0.85;
       let currentTime = 0.35;
 
@@ -268,7 +268,7 @@ export default function MobileServicesScroller({ onSelectService }) {
       {/* Pinned viewport stage: stays fixed while scrolling through the 6 stages */}
       <div
         ref={pinRef}
-        className="h-[100dvh] min-h-[560px] w-full overflow-hidden flex flex-col justify-between py-4 px-3 bg-[#000000]"
+        className="h-[100dvh] min-h-[580px] w-full overflow-hidden flex flex-col justify-between pt-[96px] pb-3 px-3 bg-[#000000]"
         style={{
           contain: 'paint',
         }}
@@ -290,80 +290,79 @@ export default function MobileServicesScroller({ onSelectService }) {
           <div className="absolute top-[65%] right-1.5 w-1 h-1 rounded-full bg-white/40" />
         </div>
 
-        {/* Section Header: starts completely hidden, fades in with scroll */}
+        {/* Section Header: positioned safely below the fixed navbar */}
         <div
           ref={headerRef}
-          className="relative z-10 text-center pt-2 pb-1 shrink-0"
+          className="relative z-10 text-center pb-1 shrink-0"
         >
           <div className="inline-flex items-center gap-2 text-[10px] font-mono tracking-[0.25em] text-neutral-400 uppercase font-semibold mb-1">
             <span className="w-5 h-[1.5px] bg-[#CCFF00] inline-block" />
             <span>OUR SERVICES</span>
             <span className="w-5 h-[1.5px] bg-[#CCFF00] inline-block" />
           </div>
-          <h2 className="text-lg sm:text-xl font-black tracking-tight text-white uppercase leading-tight">
+          <h2 className="text-sm sm:text-base font-black tracking-tight text-white uppercase leading-tight">
             SOLUTIONS BUILT TO MAKE BRANDS MOVE.
           </h2>
         </div>
 
         {/* The Central S-Curve Infographic Stage */}
-        <div className="relative z-10 w-full max-w-[390px] mx-auto my-auto flex-1 flex items-center justify-center min-h-[460px] max-h-[560px]">
-          
-          {/* SVG Canvas with Flowing S-Curve */}
-          <svg
-            className="absolute inset-0 w-full h-full pointer-events-none z-0"
-            viewBox="0 0 360 600"
-            fill="none"
-            preserveAspectRatio="none"
-          >
-            {/* Soft Ambient Shadow Path */}
-            <path
-              d="M 180 15 C 165 25, 175 35, 180 50 C 205 95, 205 105, 180 150 C 155 195, 155 205, 180 250 C 205 295, 205 305, 180 350 C 155 395, 155 405, 180 450 C 205 495, 205 505, 180 550 C 175 570, 180 580, 180 590"
-              stroke="rgba(255, 255, 255, 0.08)"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
+        <div className="relative z-10 w-full max-w-[390px] mx-auto my-auto flex-1 flex items-center justify-center min-h-[380px] max-h-[440px]">
+          <div className="relative w-full h-[420px] max-h-[430px]">
+            {/* SVG Canvas with Flowing S-Curve */}
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none z-0"
+              viewBox="0 0 360 600"
+              fill="none"
+              preserveAspectRatio="none"
+            >
+              {/* Soft Ambient Shadow Path */}
+              <path
+                d="M 180 15 C 170 25, 175 35, 180 50 C 205 85, 205 95, 180 130 C 155 165, 155 175, 180 210 C 205 245, 205 255, 180 290 C 155 325, 155 335, 180 370 C 205 400, 205 410, 180 440 C 174 460, 178 470, 180 478"
+                stroke="rgba(255, 255, 255, 0.08)"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
 
-            {/* Glowing Blur Trail */}
-            <path
-              ref={glowPathRef}
-              d="M 180 15 C 165 25, 175 35, 180 50 C 205 95, 205 105, 180 150 C 155 195, 155 205, 180 250 C 205 295, 205 305, 180 350 C 155 395, 155 405, 180 450 C 205 495, 205 505, 180 550 C 175 570, 180 580, 180 590"
-              stroke="#ffffff"
-              strokeWidth="3.5"
-              strokeLinecap="round"
-              className="opacity-75 blur-[2.5px]"
-            />
+              {/* Glowing Blur Trail */}
+              <path
+                ref={glowPathRef}
+                d="M 180 15 C 170 25, 175 35, 180 50 C 205 85, 205 95, 180 130 C 155 165, 155 175, 180 210 C 205 245, 205 255, 180 290 C 155 325, 155 335, 180 370 C 205 400, 205 410, 180 440 C 174 460, 178 470, 180 478"
+                stroke="#ffffff"
+                strokeWidth="3.5"
+                strokeLinecap="round"
+                className="opacity-75 blur-[2.5px]"
+              />
 
-            {/* Crisp Foreground White Drawing Line */}
-            <path
-              ref={pathRef}
-              d="M 180 15 C 165 25, 175 35, 180 50 C 205 95, 205 105, 180 150 C 155 195, 155 205, 180 250 C 205 295, 205 305, 180 350 C 155 395, 155 405, 180 450 C 205 495, 205 505, 180 550 C 175 570, 180 580, 180 590"
-              stroke="#ffffff"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
+              {/* Crisp Foreground White Drawing Line */}
+              <path
+                ref={pathRef}
+                d="M 180 15 C 170 25, 175 35, 180 50 C 205 85, 205 95, 180 130 C 155 165, 155 175, 180 210 C 205 245, 205 255, 180 290 C 155 325, 155 335, 180 370 C 205 400, 205 410, 180 440 C 174 460, 178 470, 180 478"
+                stroke="#ffffff"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
 
-            {/* Horizontal Connector lines from path nodes to cards */}
-            {SERVICES.map((s, idx) => {
-              const y = NODE_Y[idx];
-              const isLeft = s.align === 'left';
-              return (
-                <line
-                  key={`conn-${idx}`}
-                  ref={(el) => (connectorRefs.current[idx] = el)}
-                  x1={isLeft ? 168 : 192}
-                  y1={y}
-                  x2={isLeft ? 152 : 208}
-                  y2={y}
-                  stroke="rgba(255, 255, 255, 0.45)"
-                  strokeWidth="1.2"
-                  strokeDasharray="2 2"
-                />
-              );
-            })}
-          </svg>
+              {/* Horizontal Connector lines from path nodes to cards */}
+              {SERVICES.map((s, idx) => {
+                const y = NODE_Y[idx];
+                const isLeft = s.align === 'left';
+                return (
+                  <line
+                    key={`conn-${idx}`}
+                    ref={(el) => (connectorRefs.current[idx] = el)}
+                    x1={isLeft ? 166 : 194}
+                    y1={y}
+                    x2={isLeft ? 150 : 210}
+                    y2={y}
+                    stroke="rgba(255, 255, 255, 0.45)"
+                    strokeWidth="1.2"
+                    strokeDasharray="2 2"
+                  />
+                );
+              })}
+            </svg>
 
-          {/* 6 Step Nodes and Alternating Service Cards */}
-          <div className="relative w-full h-[520px]">
+            {/* 6 Step Nodes and Alternating Service Cards */}
             {SERVICES.map((service, idx) => {
               const yPercent = (NODE_Y[idx] / 600) * 100;
               const isLeft = service.align === 'left';
@@ -372,7 +371,7 @@ export default function MobileServicesScroller({ onSelectService }) {
               return (
                 <div
                   key={service.num}
-                  className="absolute w-full left-0"
+                  className="absolute w-full left-0 pointer-events-none"
                   style={{
                     top: `${yPercent}%`,
                     transform: 'translateY(-50%)',
@@ -381,7 +380,7 @@ export default function MobileServicesScroller({ onSelectService }) {
                   {/* Central Numbered Circular Marker */}
                   <div
                     ref={(el) => (markerRefs.current[idx] = el)}
-                    className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 z-20 w-7 h-7 rounded-full border border-white/70 bg-[#000000] flex items-center justify-center text-[10px] font-mono font-bold text-white shadow-[0_0_12px_rgba(255,255,255,0.45)] select-none"
+                    className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 z-20 w-7 h-7 rounded-full border border-white/70 bg-[#000000] flex items-center justify-center text-[10px] font-mono font-bold text-white shadow-[0_0_12px_rgba(255,255,255,0.45)] select-none pointer-events-auto"
                   >
                     <span>{service.num}</span>
                   </div>
@@ -390,28 +389,28 @@ export default function MobileServicesScroller({ onSelectService }) {
                   <div
                     ref={(el) => (cardRefs.current[idx] = el)}
                     onClick={() => onSelectService?.(idx)}
-                    className={`absolute z-10 w-[44%] max-w-[150px] cursor-pointer transition-colors duration-200 ${
-                      isLeft ? 'left-1 sm:left-2' : 'right-1 sm:right-2'
+                    className={`absolute z-10 w-[43%] max-w-[152px] cursor-pointer pointer-events-auto transition-transform duration-200 active:scale-95 ${
+                      isLeft ? 'left-1.5 sm:left-3' : 'right-1.5 sm:right-3'
                     }`}
                   >
-                    <div className="p-2.5 rounded-xl bg-[#0a0a0c]/90 border border-white/15 backdrop-blur-md hover:border-white/40 shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+                    <div className="p-2 sm:p-2.5 rounded-xl bg-[#0a0a0c]/92 border border-white/15 backdrop-blur-md hover:border-white/40 shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
                       {/* Card Header: Category & Outline Icon */}
                       <div className="flex items-center justify-between gap-1 mb-1">
-                        <span className="text-[8.5px] font-mono uppercase tracking-wider text-neutral-400 truncate">
+                        <span className="text-[8px] font-mono uppercase tracking-wider text-neutral-400 truncate max-w-[85px]">
                           {service.category}
                         </span>
-                        <div className="w-5 h-5 rounded-md bg-white/10 flex items-center justify-center shrink-0">
-                          <Icon className="w-3 h-3 text-white" />
+                        <div className="w-4 h-4 rounded bg-white/10 flex items-center justify-center shrink-0">
+                          <Icon className="w-2.5 h-2.5 text-white" />
                         </div>
                       </div>
 
                       {/* Service Title */}
-                      <h3 className="text-[11px] font-bold text-white tracking-tight leading-snug line-clamp-2">
+                      <h3 className="text-[10px] sm:text-[11px] font-bold text-white tracking-tight leading-tight line-clamp-2">
                         {service.title}
                       </h3>
 
                       {/* Brief description */}
-                      <p className="text-[8.5px] text-neutral-400 font-normal mt-1 leading-tight line-clamp-2">
+                      <p className="text-[8px] text-neutral-400 font-normal mt-0.5 leading-tight line-clamp-2">
                         {service.desc}
                       </p>
                     </div>

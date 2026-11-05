@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    background-color: #050505 !important;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    /* Keep scrollbar gutter stable to prevent 15px layout shift/jitter */
+    scrollbar-gutter: stable;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+  }
+
+  body,
+  #root {
+    background-color: #050505 !important;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Hardware accelerated smooth layer to prevent backdrop-filter jitter in Chromium */
+.gpu-layer {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* Custom glow effects matching BrandBuzzers branding */
+.glow-lime {
+  box-shadow: 0 0 25px -3px rgba(204, 255, 0, 0.45);
+}
+
+.glow-lime-sm {
+  box-shadow: 0 0 15px -2px rgba(204, 255, 0, 0.35);
+}
+
+.glow-white {
+  box-shadow: 0 0 20px -2px rgba(255, 255, 255, 0.3);
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-33.333333%, 0, 0);
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap, 1rem)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 30s) linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 40s) linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
